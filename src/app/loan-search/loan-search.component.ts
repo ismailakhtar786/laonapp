@@ -5,6 +5,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatIconModule} from '@angular/material/icon';
 
 
 @Component({
@@ -12,7 +13,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
   templateUrl: './loan-search.component.html',
   styleUrls: ['./loan-search.component.scss'],
   standalone: true,
-  imports: [MatTableModule, MatPaginatorModule, MatSelectModule, MatInputModule, MatFormFieldModule, MatDatepickerModule],
+  imports: [MatTableModule, MatPaginatorModule, MatSelectModule, MatInputModule, MatFormFieldModule, MatIconModule, MatDatepickerModule],
 })
 export class LoanSearchComponent   { 
   hideDiv1: boolean = true;

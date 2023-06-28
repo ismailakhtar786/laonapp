@@ -85,19 +85,19 @@
 
 /*progressbar*/
 #progressbar {
-    margin-bottom: 30px;
     overflow: hidden;
     /*CSS counters to number the steps*/
     counter-reset: step;
     margin: 0px;
     padding: 0px;
     margin-bottom: 20px;
+    margin-top: 40px;
 }
 
 #progressbar li {
     list-style-type: none;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 16px;
     width: 20%;
     float: left;
     position: relative;
@@ -106,19 +106,20 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+   
 }
 
 #progressbar li:before {
     content: counter(step);
     counter-increment: step;
     line-height: 26px;
-    font-size: 18px;
-    color: #333;
-    border-radius: 25px;
+    font-size: 25px;
+    color: #fff;
+    border-radius: 0px;
     padding: 3px 8px;
     margin-right: 5px;
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -129,10 +130,12 @@
 #progressbar li:after {
     content: '';
     width: 100%;
-    background: white;
+    background: #ccf3f8;
     position: absolute;
     left: -50%;
-    top: 9px;
+    top: 20px;
+    right: 0px;
+    height: 2px;
     z-index: -1; /*put it behind the numbers*/
 }
 

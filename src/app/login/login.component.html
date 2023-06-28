@@ -1,34 +1,43 @@
-<section class="vh-100" class="login-section" style="background-color: #000;">
-    <div class="container py-5 h-100">
+<section class="vh-100" class="login-section">
+  <div class="card-body p-4 p-lg-5 text-black text-center loginBox">
+    <div class="avatar"><i class="material-icons"></i></div>
+      <h2 class="mb-4 text-left">Login to Continue</h2>
+      <form class="example-form" >
+          <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>User Name</mat-label>
+          <input matInput placeholder="Enter your name" name="usename"
+          [(ngModel)] ="username">
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="Enter your password" value="" name="password" type="password" [(ngModel)]= "password">
+          </mat-form-field>
+          <section class="example-section">
+              <mat-checkbox class="example-margin">Remember Me</mat-checkbox>
+            </section><br>
+            <button class="btn btn-maroon" (click)="submit()" routerLink="/loan-application">Submit</button>
+          <!-- <button mat-raised-button color="primary" >Submit</button> -->
+          <span *ngIf="show"> <button mat-button color="accent">Login success !!</button></span>
+          </form>
+
+  </div>
+
+    <div class="container py-5 h-100" style="display: none;">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col col-xl-10">
           <div class="card" style="border-radius: 1rem;">
             <div class="row g-0">
-              <div class="col-md-6 col-lg-6 d-none d-md-block">
+              <div class="col-md-6 col-lg-6 d-none d-md-block" style="position: relative;">
+                <div class="login-data">
+                  Find the best loan
+                  <p>
+                    Lorem ipsum Lorem ipsum Lorem ipsum
+                  </p>
+                </div>
                 <img src="assets/img/cash.jpg"  alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
               </div>
               <div class="col-md-6 col-lg-6 d-flex align-items-center">
-                <div class="card-body p-4 p-lg-5 text-black">
-                    <h2 class="mb-4 text-left">Login</h2>
-                    <form class="example-form" >
-                        <mat-form-field class="example-full-width" appearance="fill">
-                        <mat-label>User Name</mat-label>
-                        <input matInput placeholder="Enter your name" name="usename"
-                        [(ngModel)] ="username">
-                        </mat-form-field>
-                        <mat-form-field class="example-full-width" appearance="fill">
-                        <mat-label>Password</mat-label>
-                        <input matInput placeholder="Enter your password" value="" name="password" type="password" [(ngModel)]= "password">
-                        </mat-form-field>
-                        <section class="example-section">
-                            <mat-checkbox class="example-margin">Remember Me</mat-checkbox>
-                          </section><br>
-                          <button class="btn btn-maroon" (click)="submit()" routerLink="/loan-application">Submit</button>
-                        <!-- <button mat-raised-button color="primary" >Submit</button> -->
-                        <span *ngIf="show"> <button mat-button color="accent">Login success !!</button></span>
-                        </form>
-  
-                </div>
+                
               </div>
             </div>
           </div>
