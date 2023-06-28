@@ -1,8 +1,8 @@
-<div class="example-container">
+<div class="example-container wizard-section">
   <h1>Loan Application</h1>
   <div class="">
     <ul id="progressbar">
-        <li [ngClass]="step >= 1 ? 'active ' : 'inactive'">Application</li>
+        <li [ngClass]="step >= 1 ? 'active' : 'inactive'">Application</li>
         <li [ngClass]="step >= 2 ? 'active' : 'inactive'">Loan Info</li>
         <li [ngClass]="step >= 3 ? 'active' : 'inactive'">Ornament Details</li>
         <li [ngClass]="step >= 4 ? 'active' : 'inactive'">Guarantor</li>
@@ -16,49 +16,49 @@
       <fieldset *ngIf="step == 1">
         <h2 class="fs-title">Application</h2>
         <div class="row">
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field>
               <mat-label>First Name:</mat-label>
               <input matInput #input placeholder="First Name" />
             </mat-form-field>
           </div>
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field>
                 <mat-label>Middle Name:</mat-label>
                 <input matInput #input placeholder="Middle Name" />
               </mat-form-field>
           </div>
 
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field>
                 <mat-label>Surname:</mat-label>
                 <input matInput #input placeholder="Surname" />
               </mat-form-field>
           </div>
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field>
                 <mat-label>Birth Date:</mat-label>
-                <input matInput [matDatepicker]="picker">
+                <input matInput [matDatepicker]="picker1">
                 <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
-                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
+                <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
               </mat-form-field>
             
           </div>
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field>
                 <mat-label>Phone No:</mat-label>
                 <input matInput #input placeholder="Phone No." />
               </mat-form-field>
           </div>
 
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field>
                 <mat-label>Email Id:</mat-label>
                 <input matInput #input placeholder="Email Id" />
               </mat-form-field>
           </div>
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <label for="gender">Gender: </label>
             <mat-radio-group aria-label="Select an option">
                 <mat-radio-button value="1">Male</mat-radio-button>
@@ -69,31 +69,31 @@
           <div class="col-md-12">
             <h4>Address:</h4>
           </div>
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field>
                 <mat-label>Flat/ House No. / Building / Apartment:</mat-label>
                 <input matInput #input placeholder="Flat/ House No. / Building / Apartment:" />
               </mat-form-field>
           </div>
-          <div class="col-md-6 mb-4">
+          <div class="col-md-6">
             <mat-form-field>
                 <mat-label>Area / Street / Sector / Village:</mat-label>
                 <input matInput #input placeholder="Area / Street / Sector / Village" />
               </mat-form-field>
           </div>
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field>
                 <mat-label>Landmark:</mat-label>
                 <input matInput #input placeholder="Landmark" />
               </mat-form-field>
           </div>
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field>
                 <mat-label>Town / City:</mat-label>
                 <input matInput #input placeholder="Town / City" />
               </mat-form-field>
           </div>
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field>
                 <mat-label>State:</mat-label>
                 <mat-select>
@@ -118,7 +118,7 @@
               </mat-form-field>
 
           </div>
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field id="country-state">
                 <mat-label>Country:</mat-label>
                 <mat-select>
@@ -152,13 +152,13 @@
       <fieldset *ngIf="step == 2">
         <h2 class="fs-title">Loan Info</h2>
         <div class="row">
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field>
                 <mat-label>Case No. / Application No:</mat-label>
                 <input matInput #input placeholder="Case No. / Application No" />
               </mat-form-field>
           </div>
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field id="loantype">
                 <mat-label>Loan Type:</mat-label>
                 <mat-select>
@@ -176,37 +176,37 @@
               </mat-form-field>
 
           </div>
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field>
                 <mat-label>Loan Amount:</mat-label>
                 <input matInput #input placeholder="Loan Amount" />
               </mat-form-field>
           </div>
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field>
                 <mat-label>Tenure:</mat-label>
                 <input matInput #input placeholder="Tenure" />
               </mat-form-field>
           </div>
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field>
                 <mat-label>Interest Rate:</mat-label>
                 <input matInput #input placeholder="Interest Rate" />
               </mat-form-field>
           </div>
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field>
                 <mat-label>Installment Amount:</mat-label>
                 <input matInput #input placeholder="Installment Amount" />
               </mat-form-field>
           </div>
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field>
                 <mat-label>Loan Purpose:</mat-label>
                 <input matInput #input placeholder="Loan Purpose" />
               </mat-form-field>
           </div>
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field>
                 <mat-label>Remark:</mat-label>
                 <input matInput #input placeholder="Remark" />
@@ -245,7 +245,7 @@
             <h4>Valuator Details</h4>
           </div>
 
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field id="valuatorname">
                 <mat-label>Select Valuator:</mat-label>
                 <mat-select>
@@ -258,24 +258,24 @@
               </mat-form-field>
 
           </div>
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field>
                 <mat-label for="valuationDate">Valuation Date:</mat-label>
-                <input matInput [matDatepicker]="picker">
+                <input matInput [matDatepicker]="picker2">
                 <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
-                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
+                <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
               </mat-form-field>
 
           </div>
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field>
                 <mat-label>Total Valuation Price (Rs):</mat-label>
                 <input matInput #input placeholder="Total Valuation Price (Rs)" />
               </mat-form-field>
 
           </div>
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field>
                 <mat-label>Narration:</mat-label>
                 <input matInput #input placeholder="Narration" />
@@ -285,7 +285,7 @@
           <div class="col-md-12">
             <h4>Gold Item Details</h4>
           </div>
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field id="ornamenttype">
                 <mat-label>Select Ornament:</mat-label>
                 <mat-select>
@@ -298,7 +298,7 @@
               </mat-form-field>
 
           </div>
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field id="carretname">
                 <mat-label>Select Carret:</mat-label>
                 <mat-select>
@@ -311,59 +311,59 @@
               </mat-form-field>
 
           </div>
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field>
                 <mat-label>Bank Rate:</mat-label>
                 <input matInput #input placeholder="Bank Rate" />
               </mat-form-field>
 
           </div>
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field>
                 <mat-label>Quantity:</mat-label>
                 <input matInput #input placeholder="Quantity" />
               </mat-form-field>
               
           </div>
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field>
                 <mat-label>Gross Weight(gm):</mat-label>
                 <input matInput #input placeholder="Gross Weight(gm)" />
               </mat-form-field>
               
           </div>
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field>
                 <mat-label>Gross Weight(mg):</mat-label>
                 <input matInput #input placeholder="Gross Weight(mg)" />
               </mat-form-field>
 
           </div>
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field>
                 <mat-label>Net Weight(gm):</mat-label>
                 <input matInput #input placeholder="Net Weight(gm)" />
               </mat-form-field>
           </div>
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field>
                 <mat-label>Net Weight(mg):</mat-label>
                 <input matInput #input placeholder="Net Weight(mg)" />
               </mat-form-field>
           </div>
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field>
                 <mat-label>Valuated Price:</mat-label>
                 <input matInput #input placeholder="Valuated Price" />
               </mat-form-field>
           </div>
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field>
                 <mat-label>Remark:</mat-label>
                 <input matInput #input placeholder="Remark" />
               </mat-form-field>
           </div>
-          <div class="col-md-6 mb-4">
+          <div class="col-md-6">
             <input
             (click)="toggleDiv(1)"
               type="button"
@@ -445,13 +445,13 @@
       <fieldset *ngIf="step == 4">
         <h2 class="fs-title">Guarantor</h2>
         <div class="row">
-            <div class="col-md-3 mb-4">
+            <div class="col-md-3">
             <mat-form-field>
                 <mat-label>First Name:</mat-label>
                 <input matInput #input placeholder="First Name" />
               </mat-form-field>
             </div>
-              <div class="col-md-3 mb-4">
+              <div class="col-md-3">
                 <label for="gender">Gender: </label>
                 <mat-radio-group aria-label="Select an option">
                     <mat-radio-button value="1">Male</mat-radio-button>
@@ -459,37 +459,37 @@
                   </mat-radio-group>
               </div>
 
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field>
                 <mat-label>Middle Name:</mat-label>
                 <input matInput #input placeholder="Middle Name" />
               </mat-form-field>
           </div>
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field>
                 <mat-label>Age:</mat-label>
                 <input matInput #input placeholder="Age" />
               </mat-form-field>
           </div>
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field>
                 <mat-label>Last Name:</mat-label>
                 <input matInput #input placeholder="Last Name" />
               </mat-form-field>
           </div>
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field>
                 <mat-label>Phone No:</mat-label>
                 <input matInput #input placeholder="Phone No" />
               </mat-form-field>
           </div>
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <mat-form-field>
                 <mat-label>Income:</mat-label>
                 <input matInput #input placeholder="Income" />
               </mat-form-field>
           </div>
-          <!-- <div class="col-md-6 mb-4">
+          <!-- <div class="col-md-6">
           <input type="text"  placeholder="Total Marks" />
           <div *ngIf="education_step && educationalDetails.controls['total_marks'].errors">
             <div *ngIf="educationalDetails.controls['total_marks'].errors['required']">Total marks is required
@@ -523,7 +523,7 @@
       <fieldset *ngIf="step == 5">
         <h2 class="fs-title">Upload Document</h2>
         <div class="row">
-            <div class="col-md-3 mb-4">
+            <div class="col-md-3">
                 <mat-form-field id="documentname">
                     <mat-label>Select Document:</mat-label>
                     <mat-select>
@@ -535,7 +535,7 @@
     
               </div>
 
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3">
             <div class="file-input">
                 <input
                   type="file"
