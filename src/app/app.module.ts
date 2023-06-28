@@ -18,6 +18,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatRadioModule} from '@angular/material/radio';
+import { HomeLoanComponent } from './home-loan/home-loan.component';
+import { VehicleLoanComponent } from './vehicle-loan/vehicle-loan.component';
 
 
 const routes: Routes = [
@@ -27,6 +29,8 @@ const routes: Routes = [
   { path: 'left-nav', component: LeftNavigationComponent },
   { path: 'loan-application', component: LoanApplicationComponent },
   { path: 'loan-search', component: LoanSearchComponent },
+  { path: 'home-loan', component: HomeLoanComponent },
+  { path: 'vehicle-loan', component: VehicleLoanComponent },
 ];
 
 @NgModule({
@@ -46,7 +50,7 @@ const routes: Routes = [
     MatNativeDateModule,
     MatRadioModule,
   ],
-  declarations: [AppComponent, LoginComponent, LoanApplicationComponent, HeaderComponent, LeftNavigationComponent],
+  declarations: [AppComponent, LoginComponent, LoanApplicationComponent, HeaderComponent, LeftNavigationComponent, HomeLoanComponent, VehicleLoanComponent],
   bootstrap: [AppComponent]
 })
 
