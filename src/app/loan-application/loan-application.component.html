@@ -1,0 +1,384 @@
+<div class="content">
+    <div class="container">
+      <div class="row">
+        <!-- Application -->
+        <form [formGroup]="personalDetails" id="msform">
+          <!-- progressbar -->
+          <ul id="progressbar">
+            <li [ngClass]="step>=1 ? 'active ' : 'inactive'">Application</li>
+            <li [ngClass]="step>=2 ? 'active' : 'inactive'">Loan Info</li>
+            <li [ngClass]="step>=3 ? 'active' : 'inactive'">Ornament Details</li>
+            <li [ngClass]="step==4 ? 'active' : 'inactive'">Guarantor</li>
+            <li [ngClass]="step==5 ? 'active' : 'inactive'">Upload Document</li> 
+          </ul>
+
+          
+          <fieldset *ngIf="step == 1">
+            <h2 class="fs-title">Application</h2>
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <label for="firstname">First Name: </label>
+                <input type="text" name="firstname" class="form-control" />
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="lastname">Middle Name: </label>
+                <input type="text"name="lastname"  class="form-control" />
+              </div>
+              
+              <div class="col-md-6 mb-4">
+                <label for="surname">Surname: </label>
+                <input type="text" name="surname" class="form-control" />
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="birthdate">Birth Date: </label>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Choose a date</mat-label>
+                  <input matInput [matDatepicker]="picker">
+                  <mat-datepicker-toggle matIconSuffix [for]="picker">
+                    <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                  </mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+              </div>              
+              <div class="col-md-6 mb-4">
+                <label for="phonenumber">Phone No: </label>
+                <input type="text" name="phonenumber" class="form-control" />
+              </div>
+
+              <div class="col-md-6 mb-4">
+                <label for="emailid">Email Id: </label>
+                <input type="text" name="emailid" class="form-control" />
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="gender">Gender: </label>
+                <div class="col-md-12">
+                  <input type="radio" name="gender" value="male" style="width: auto;"> Male
+                  <input type="radio" name="gender" value="female" style="width: auto;" > Female  
+                </div>                              
+              </div>
+              <div class="col-md-12"></div>
+              <div class="col-md-12">
+                <h4>Address:</h4>
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="flat">Flat/ House No. / Building / Apartment: </label>
+                <input type="text" name="flat" class="form-control" />
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="area">Area / Street / Sector / Village </label>
+                <input type="text" name="area" class="form-control" />
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="landmark">Landmark </label>
+                <input type="text" name="landmark" class="form-control"/>               
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="city">Town / City </label>
+                <input type="text" name="city" class="form-control" />
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="state">State </label>
+                <select name="state" id="state" class="form-control">
+                  <option value="Andhra Pradesh">Andhra Pradesh</option>
+                  <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                  <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                  <option value="Assam">Assam</option>
+                  <option value="Bihar">Bihar</option>
+                  <option value="Chandigarh">Chandigarh</option>
+                  <option value="Chhattisgarh">Chhattisgarh</option>
+                  <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                  <option value="Daman and Diu">Daman and Diu</option>
+                  <option value="Delhi">Delhi</option>
+                  <option value="Lakshadweep">Lakshadweep</option>
+                  <option value="Puducherry">Puducherry</option>                
+                </select>
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="country-state">Country </label>
+                <!--- India states -->
+                <select id="country-state" name="country-state" class="form-control">
+                  <option value="">Select state</option>
+                  <option value="AN">Andaman and Nicobar Islands</option>
+                  <option value="AP">Andhra Pradesh</option>
+                  <option value="AR">Arunachal Pradesh</option>
+                  <option value="AS">Assam</option>
+                  <option value="BR">Bihar</option>
+                </select>
+              </div>
+              <div class="col-md-12">
+                <input (click)="next()" type="button" name="next" class="next action-button" value="Next" />
+              </div>
+            </div>
+
+          </fieldset>
+        </form>
+
+        <!-- address details-->
+        <form [formGroup]="addressDetails" id="msform">
+          <fieldset *ngIf="step == 2">
+            <h2 class="fs-title">Loan Info</h2>
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <label for="caseno">Case No. / Application No: </label>
+                <input type="text" name="caseno" class="form-control"/>
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="loantype">Loan Type: </label>
+                <select name="loantype" id="loantype" class="form-control">
+                  <option value="Home">Gold</option>
+                  <option value="Vehicle">Vehicle</option>
+                  <option value="Education">Education</option>
+                  <option value="Gold">Home</option>
+                  <option value="Crop Loan">Crop Loan</option>
+                  <option value="Policy">Policy</option>
+                  <option value="HP Loan">HP Loan</option>
+                  <option value="Security">Security</option>
+                </select>
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="loanamount">Loan Amount: </label>
+                <input type="text" name="loanamount" class="form-control" />
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="tenure">Tenure: </label>
+                <input type="text" name="tenure" class="form-control" />
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="intrestrate">Interest Rate: </label>
+                <input type="text" name="intrestrate" class="form-control"/>
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="installment">Installment Amount: </label>
+                <input type="text" name="installment" class="form-control"/>
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="loanpurpose">Loan Purpose: </label>
+                <input type="text" name="loanpurpose" class="form-control"/>
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="remark">Remark: </label>
+                <input type="text" name="remark" class="form-control"/>
+              </div>
+              <div class="col-md-6 mb-4">
+                <input (click)="previous()" type="button" name="previous" class="previous action-button-previous"
+                  value="Previous" />
+                <input (click)="next()" type="button" name="next" class="next action-button" value="Next" />
+              </div>
+            </div>
+
+          </fieldset>
+        </form>
+
+        <!-- ornament details-->
+        <form [formGroup]="ornamentDetails" id="msform">
+          <fieldset *ngIf="step == 3">
+            <h2 class="fs-title">Ornament Details</h2>
+            <div class="row">
+              <div class="col-md-12">
+                <h4>Valuator Details</h4>
+              </div>
+              
+              <div class="col-md-6 mb-4">
+                <label for="valuatorname">Select Valuator: </label>
+                <select name="valuatorname" id="valuatorname" class="form-control">
+                  <option value="Home">Home</option>
+                  <option value="Vehicle">Vehicle</option>
+                  <option value="Education">Education</option>
+                </select>
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="valuationDate">Valuation Date: </label>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Choose a date</mat-label>
+                  <input matInput [matDatepicker]="picker">
+                  <mat-datepicker-toggle matIconSuffix [for]="picker">
+                    <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                  </mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="valuationPrice">Total Valuation Price (Rs): </label>
+                <input type="text" name="valuationPrice" class="form-control" />
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="narration">Narration: </label>
+                <input type="text" name="narration" class="form-control" />
+              </div>
+
+              <div class="col-md-12">
+                <h4>Gold Item Details</h4>
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="ornamenttype">Select Ornament: </label>
+                <select name="ornamenttype" id="ornamenttype" class="form-control">
+                  <option value="Home">chain</option>
+                  <option value="Vehicle">ring</option>
+                  <option value="Education">Necklece</option>
+                </select>
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="carretname">Select Carret: </label>
+                <select name="carretname" id="carretname" class="form-control">
+                  <option value="0">18</option>
+                  <option value="1">20</option>
+                  <option value="2">22</option>
+                </select>
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="bankrate">Bank Rate: </label>
+                <input type="text" name="bankrate" class="form-control"/>
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="quantity">Quantity: </label>
+                <input type="text" name="quantity" class="form-control"/>
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="grossweightfirst">Gross Weight(gm): </label>
+                <input type="text" name="grossweightfirst" class="form-control"/>
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="grossweightsecond">Gross Weight(mg): </label>
+                <input type="text" name="grossweightsecond" class="form-control"/>
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="netweightfirst">Net Weight(gm): </label>
+                <input type="text" name="netweightfirst" class="form-control"/>
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="netweightsecond">Net Weight(mg): </label>
+                <input type="text" name="netweightsecond" class="form-control"/>
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="valuatedprice">Valuated Price: </label>
+                <input type="text" name="valuatedprice" class="form-control"/>
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="ornamentremark">Remark: </label>
+                <input type="text" name="ornamentremark" class="form-control"/>
+              </div>
+              <div class="col-md-6 mb-4">
+                <input (click)="add()" type="button" name="addornament" class="next action-button" value="Add" />
+              </div>
+              <div class="col-md-6 mb-4">
+                <input (click)="previous()" type="button" name="previous" class="previous action-button-previous"
+                  value="Previous" />
+                <input (click)="next()" type="button" name="next" class="next action-button" value="Next" />
+              </div>
+            </div>
+
+          </fieldset>
+        </form>
+
+        <!-- Guarantor detail-->
+        <form [formGroup]="educationalDetails" id="msform">
+          <fieldset *ngIf="step == 4">
+            <h2 class="fs-title">Guarantor</h2>
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <label for="firstname">First Name: </label>
+                <input type="text" name="firstname" class="form-control"/>
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="gender">Gender: </label>
+                <div class="col-md-12">
+                  <input type="radio" name="gender" value="male" style="width: auto;"> Male
+                  <input type="radio" name="gender" value="female" style="width: auto;" > Female  
+                </div> 
+              </div>
+
+              <div class="col-md-6 mb-4">
+                <label for="middlename">Middle Name: </label>
+                <input type="text" name="middlename" class="form-control"/>
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="age">Age: </label>
+                <input type="text" name="age" class="form-control"/>
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="lastname">Last Name: </label>
+                <input type="text" name="lastname" class="form-control" />
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="phonenum">Phone No: </label>
+                <input type="text" name="phonenum" class="form-control"/>
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="income">Income: </label>
+                <input type="text" name="income" class="form-control" />
+              </div>
+              <!-- <div class="col-md-6 mb-4">
+                <input type="text"  placeholder="Total Marks" />
+                <div *ngIf="education_step && educationalDetails.controls['total_marks'].errors">
+                  <div *ngIf="educationalDetails.controls['total_marks'].errors['required']">Total marks is required
+                  </div>
+                </div>
+              </div> -->
+            </div>
+
+            <div class="col-md-6 mb-4">
+              <input (click)="previous()" type="button" name="previous" class="previous action-button-previous"
+                value="Previous" />
+              <input (click)="next()" type="button" name="next" class="next action-button" value="Next" />
+            </div>
+
+          </fieldset>
+        </form>
+
+        <!--upload document-->
+        <form [formGroup]="uploadDocument" id="msform">
+          <fieldset *ngIf="step == 5">
+            <h2 class="fs-title">Upload Document</h2>
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <label for="documentname">Select Document: </label>
+                <select name="documentname" id="documentname" class="form-control">
+                  <option value="aadharcard">Aadhar Card</option>
+                  <option value="pancard">Pancard</option>
+                  <option value="drivinglicence">Driving Licence</option>
+                </select>
+              </div>
+              <div class="col-md-12"></div>
+              <div class="col-md-12">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">First</th>
+                      <th scope="col">Last</th>
+                      <th scope="col">Handle</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Jacob</td>
+                      <td>Thornton</td>
+                      <td>@fat</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td colspan="2">Larry the Bird</td>
+                      <td>@twitter</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4">
+              <input (click)="previous()" type="button" name="previous" class="previous action-button-previous"
+                value="Previous" />
+              <input (click)="submit()" type="submit" name="Save" class="submit action-button" value="Save" />
+            </div>
+          </fieldset>
+        </form>
+
+      </div>
+    </div>
+  </div>
