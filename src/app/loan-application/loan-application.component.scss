@@ -9,7 +9,7 @@
     background: white;
     border: 0 none;
     border-radius: 15px;
-    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.4);
+    // box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.4);
     padding: 20px 30px;
     box-sizing: border-box;
 
@@ -103,27 +103,40 @@
     overflow: hidden;
     /*CSS counters to number the steps*/
     counter-reset: step;
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: 20px;
 }
 
 #progressbar li {
     list-style-type: none;
     text-transform: uppercase;
-    font-size: 9px;
+    font-size: 14px;
     width: 20%;
     float: left;
     position: relative;
     letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 #progressbar li:before {
     content: counter(step);
     counter-increment: step;
     line-height: 26px;
-    font-size: 12px;
+    font-size: 18px;
     color: #333;
     border-radius: 25px;
     padding: 3px 8px;
     margin-right: 5px;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
 }
 
 /*progressbar connectors*/

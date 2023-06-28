@@ -17,6 +17,7 @@ import { LeftNavigationComponent } from './left-navigation/left-navigation.compo
 import {MatIconModule} from '@angular/material/icon';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
+import {MatRadioModule} from '@angular/material/radio';
 
 
 const routes: Routes = [
@@ -43,6 +44,7 @@ const routes: Routes = [
     MatIconModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatRadioModule,
   ],
   declarations: [AppComponent, LoginComponent, LoanApplicationComponent, HeaderComponent, LeftNavigationComponent],
   bootstrap: [AppComponent]
