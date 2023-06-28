@@ -7,6 +7,7 @@ import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms'
   styleUrls: ['./loan-application.component.scss']
 })
 export class LoanApplicationComponent implements OnInit{
+  
 
   personalDetails!: FormGroup;
   addressDetails!: FormGroup;
@@ -19,6 +20,26 @@ export class LoanApplicationComponent implements OnInit{
   education_step = false;
   document_step = false;
   step = 1;
+  hideDiv1: boolean = true;
+  hideDiv2: boolean = true;
+  hideDiv3: boolean = true;
+
+  
+  toggleDiv(divNumber: number) {
+    switch (divNumber) {
+      case 1:
+        this.hideDiv1 = !this.hideDiv1;
+        break;
+      case 2:
+        this.hideDiv2 = !this.hideDiv2;
+        break;
+      case 3:
+        this.hideDiv3 = !this.hideDiv3;
+        break;
+    }
+  }
+
+  
 
   constructor(private formBuilder: FormBuilder) { }
 
@@ -107,4 +128,7 @@ export class LoanApplicationComponent implements OnInit{
   add(){
     
   }
+
+
+  
 }
